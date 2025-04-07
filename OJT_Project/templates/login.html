@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Empyrean Gaming Lifescape</title>
+    
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:monospace;
+    }
+    h1 {
+        color: whitesmoke;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    body {
+        background-color: black;
+        background-image: url('static/images/Empyrean Gaming Lifescape.png');
+        background-size: cover;
+        padding-top: 50px;
+    }
+    input {
+        margin: 5px 0px;
+        height: 35px;
+        padding: 7px;
+    }
+    button {
+        height: 35px;
+        margin: 5px 0px;
+        background-color: antiquewhite;
+        border: none;
+        border-radius: 5px;
+        color: #333;
+    }
+    label {
+        width: 100px;
+        display: inline-block;
+        color: whitesmoke;
+    }
+    input {
+        width: 100%;
+    }
+    .button {
+        background-color:#333;
+        border: 1px solid black;
+        color: whitesmoke;
+    }
+    .button:hover {
+        background-color: #555;
+    }
+    .container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-top: 100px;
+        background-color:#101314;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Admin Log In</h1>
+        <form action="/admin_login" method="POST">
+            <label for="uname">Username:</label>
+            <input type="text" name="uname" placeholder="Input username">
+            <br>
+            <label for="passw">Password:</label>
+            <input type="password" name="passw" placeholder="Input password">
+            <br>
+            <input type="submit" value="Enter" class="button">
+        </form>
+    </div>
+</body>
+</html>

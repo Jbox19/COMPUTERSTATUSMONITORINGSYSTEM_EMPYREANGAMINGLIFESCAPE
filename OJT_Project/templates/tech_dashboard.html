@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: monospace;
+    }
+    body {
+        background-image: url('static/images/icafe.png');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+    .container {
+        width: 480px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 30px auto;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #007BFF;
+    }
+    .container label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    .container input[type="text"],
+    .container input[type="submit"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .container input[type="submit"] {
+        width: 480px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+        border: none;
+    }
+    .container input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <div class="container">
+        <center><h1>Technician Form</h1></center>
+        <form action="/tech_dashboard" method="POST">
+            <label for="id">Pc Number:</label>
+                <input type="text" name="id" required>
+            <label for="time_start">Time Start:</label>
+                <input type="text" name="ts" required>
+            <label for="time_out">Time End:</label>
+                <input type="text" name="te" required>
+            <label for="Details">Details:</label>
+                <input type="text" name="details" required>
+            <label for="Past_problem">Past Problem:</label>
+                <input type="text" name="pp"required>
+            <label for="Status">Status:</label>
+                <input type="text" name="status"required>
+                <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
