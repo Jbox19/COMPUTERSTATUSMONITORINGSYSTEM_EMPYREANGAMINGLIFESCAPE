@@ -33,6 +33,7 @@
     .container label {
         display: block;
         margin: 10px 0 5px;
+        font-weight: bold;
     }
     .container input[type="text"],
     .container input[type="submit"] {
@@ -52,8 +53,21 @@
     .container input[type="submit"]:hover {
         background-color: #0056b3;
     }
+
+    .back-button {
+        display: block;
+        text-align: center;
+        padding: 10px 5px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 100px;
+        font-weight: bold;
+    }
 </style>
 <body>
+    <a href="/" class="back-button">Back</a>
     <div class="container">
         <center><h1>Technician Form</h1></center>
         <form action="/tech_dashboard" method="POST">

@@ -13,9 +13,9 @@
         padding: 0;
         box-sizing: border-box;
         font-family:monospace;
+        color: whitesmoke
     }
     h1 {
-        color: whitesmoke;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -29,11 +29,11 @@
         margin: 5px 0px;
         height: 35px;
         padding: 7px;
+        color: black;
     }
     button {
         height: 35px;
         margin: 5px 0px;
-        background-color: antiquewhite;
         border: none;
         border-radius: 5px;
         color: #333;
@@ -41,7 +41,6 @@
     label {
         width: 100px;
         display: inline-block;
-        color: whitesmoke;
     }
     input {
         width: 100%;
@@ -49,10 +48,11 @@
     .button {
         background-color:#333;
         border: 1px solid black;
-        color: whitesmoke;
+        font-weight: bold;
     }
     .button:hover {
         background-color: #555;
+        color: white
     }
     .container {
         width: 300px;
@@ -62,6 +62,10 @@
         border-radius: 5px;
         margin-top: 100px;
         background-color:#101314;
+    }
+    p {
+        margin-top: 5px;
+        margin-left: 3px;
     }
 </style>
 <body>
@@ -75,6 +79,7 @@
             <input type="password" name="passw" placeholder="Input password">
             <br>
             <input type="submit" value="Enter" class="button">
+            <p>Go back to Homepage <a href="/">Homepage</a></p>
         </form>
     </div>
 </body>

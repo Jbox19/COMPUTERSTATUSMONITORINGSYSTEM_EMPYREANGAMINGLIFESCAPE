@@ -1,30 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC Status Report</title>
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: #f4f6f8;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 600px;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e0e0e0;
+    }
+
+    .card h1 {
+        font-size: 26px;
+        font-weight: 600;
+        color: #333333;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #0077cc;
+        padding-bottom: 10px;
+    }
+
+    .info-group {
+        margin-bottom: 20px;
+    }
+
+    .info-title {
+        font-size: 23px;
+        color: #666666;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    p {
+        font-size: 20px;
+        color: blue;
+        font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .status-repaired {
+        color: green;
+        font-weight: bold;
+    }
+
+    .status-default {
+        color: red;
+        font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Start Time</th>
-                <th>Start End</th>
-                <th>Details</th>
-                <th>Past_problem</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{data.time_start}}</td>
-                <td>{{data.time_end}}</td>
-                <td>{{data.details}}</td>
-                <td>{{data.past_problem}}</td>
-                <td>{{data.status}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card">
+        <h1>PC Number {{data.id}}</h1>
+
+            <div class="info-group">
+                <div class="info-title">Time Start</div>
+                <p>{{data.time_start}}</p>
+            </div>
+
+        <div class="info-group">
+            <div class="info-title">Time End</div>
+            <p>{{data.time_end}}</p>
+        </div>
+
+        <div class="info-group">
+            <div class="info-title">Details</div>
+            <p>{{data.details}}</p>
+        </div>
+
+        <div class="info-group">
+            <div class="info-title">Past Problem</div>
+            <p>{{data.past_problem}}</p>
+        </div>
+
+        <div class="info-group">
+            <div class="info-title">Status</div>
+            <p class="{% if data.status == 'Repaired' %}status-repaired{% else %}status-default{% endif %}">
+                {{data.status}}
+            </p>
+        </div>
+        
+    </div>
 </body>
 </html>

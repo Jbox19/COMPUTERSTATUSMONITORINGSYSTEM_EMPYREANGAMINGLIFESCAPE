@@ -68,5 +68,16 @@ def tech_dashboard():
         return render_template("tech_dashboard.html")
     return render_template("tech_dashboard.html")
 
+@icafe.route("/view_status/<int:id>")
+def view_status(id):
+    con = get_db_connection()
+    cur = con.cursor()
+    cur.execute("SELECT status FROM tech_dashboard WHERE id = ?", (id,))
+    status = cur.fetchone()
+    cur.close()
+    con.close()
+    return render_template("admin_dashboard.html", status=status)
+
+
 if __name__ == '__main__':
     icafe.run(debug=True)
